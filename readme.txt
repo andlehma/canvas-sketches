@@ -1,0 +1,1 @@
+getting back into some generative art. i feel like i should be using p5.js or webGL or something, but i already know canvas pretty well. goal here is to make some interesting audio visualizers, but i'm also just enjoying playing around and seeing what i come up with.
