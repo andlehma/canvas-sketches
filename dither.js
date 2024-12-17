@@ -30,7 +30,11 @@ const dataToGrayscalePixels = (data, width) => {
 	const chunkSize = width * 4;
 	const rows = _.chunk(data, chunkSize);
 	const pixels = rows.map(row => _.chunk(row, 4));
-	const gray = pixels.map(row => row.map(pixel => (pixel[0] + pixel[1] + pixel[2]) / 3));
+	const gray = pixels.map(row => row.map(pixel => (
+		(pixel[0] * 0.3) +
+		(pixel[1] * 0.59) +
+		(pixel[2] * 0.11)
+	)));
 	return gray;
 }
 
