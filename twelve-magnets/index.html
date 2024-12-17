@@ -15,13 +15,125 @@
             height: 100vh;
             overflow: hidden;
         }
+
+        .slider {
+            width: 500px;
+        }
     </style>
 </head>
 
 <body>
     <canvas id="canvas"></canvas>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <br>
+    <h2>Options</h2>
+    <label>
+        Magnet Radius
+        <input id="mag-radius" type="range" min="1" max="200" value="10" step="1" class="slider">
+        <span id="mag-radius-value">10</span>
+    </label>
+    <br>
+    <label>
+        Ball Radius
+        <input id="ball-radius" type="range" min="1" max="200" value="10" step="1" class="slider">
+        <span id="ball-radius-value">10</span>
+    </label>
+    <br>
+    <label>
+        Gravity
+        <input id="gravity" type="range" min="-2" max="2" value="0" step=".1" class="slider">
+        <span id="gravity-value">0</span>
+    </label>
+    <br>
+    <label>
+        Friction
+        <input id="friction" type="range" min="0" max="1" value="0.1" step=".01" class="slider">
+        <span id="friction-value">0.1</span>
+    </label>
+    <br>
+    <label>
+        Wall Bounciness
+        <input id="bounce-factor" type="range" min="0" max="1" value="0.9" step=".1" class="slider">
+        <span id="bounce-value">0.9</span>
+    </label>
+    <br>
+    <label>
+        Terminal Velocity
+        <input id="terminal-velocity" type="range" min="0" max="10" value="2" step=".1" class="slider">
+        <span id="terminal-velocity-value">2</span>
+    </label>
+    <br>
+    <label>
+        Magnet Constant
+        <input id="mag-constant" type="range" min="0" max="10" value="2" step=".1" class="slider">
+        <span id="mag-constant-value">2</span>
+    </label>
+    <br>
+    <label>
+        Background Color
+        <input id="background-color" type="range" min="0" max="255" value="10" step="1" class="slider">
+        <span id="background-color-value">10</span>
+    </label>
+    <br>
+    <label>
+        Ball Opacity
+        <input id="ball-opacity" type="range" min="0" max="1" value="0.1" step=".01" class="slider">
+        <span id="ball-opacity-value">0.1</span>
+    </label>
+    <br>
+    <label>
+        Ball Feathering Steps
+        <input id="ball-feathering-steps" type="range" min="0" max="100" value="5" step="1" class="slider">
+        <span id="ball-feathering-steps-value">5</span>
+    </label>
+    <br>
+    <label>
+        Ball Feathering Thickness
+        <input id="ball-feathering-thick" type="range" min="1" max="10" value="1" step="1" class="slider">
+        <span id="ball-feathering-thick-value">1</span>
+    </label>
+    <br>
+    <label>
+        Draw Magnets
+        <input id="draw-mags" type="checkbox">
+    </label>
+    <br>
+    <label>
+        Draw Balls
+        <input id="draw-balls" type="checkbox" checked="true">
+    </label>
+    <br>
+    <label>
+        Dither
+        <input id="dither" type="checkbox" checked="true">
+    </label>
+    <h2>Initial Parameters</h2>
+    <p>Warning: dithering large canvases with lots of balls can cause performance issues</p>
+    <label>
+        Canvas Width
+        <input id="canvas-width" type="range" min="1" max="1000" value="320" step="1" class="slider">
+        <span id="canvas-width-value">320</span>
+    </label>
+    </br>
+    <label>
+        Canvas Height
+        <input id="canvas-height" type="range" min="1" max="1000" value="180" step="1" class="slider">
+        <span id="canvas-height-value">180</span>
+    </label>
+    <br>
+    <br>
+    <label>
+        Ball Count
+        <input id="ball-count" type="range" min="1" max="1000" value="100" step="1" class="slider">
+        <span id="ball-count-value">100</span>
+    </label>
+    <br>
+    <label>
+    <button id="reset" onclick="init()">Reset</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../dither.js"></script>
+    <script src="notes.js"></script>
     <script src="index.js"></script>
 </body>
 
